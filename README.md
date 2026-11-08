@@ -8,7 +8,7 @@ This project is for building a mini Retrieval-Augmented Generation (RAG) applica
 - **Miniconda** to create an isolated Python environment.
 - For Windows users who want to work in Linux: **WSL 2 with Ubuntu**.
 
-The repository is at an initial stage. Application code, dependencies, and run commands will be added as development progresses.
+The repository is at an initial stage. Follow the setup steps below to install the current dependencies and create your local environment configuration.
 
 ## Set up Miniconda
 
@@ -111,7 +111,36 @@ python -c "import sys; print(sys.executable)"
 
 Windows drives are available under `/mnt` in WSL, so `C:\myFiles\github\mini-rag` becomes `/mnt/c/myFiles/github/mini-rag`. The Python executable should point to your Linux conda environment, typically under `~/miniconda3/envs/mini-rag/`.
 
-Use this terminal and activated environment for future dependency installation and application commands. The repository does not yet include a dependency file or application entry point.
+Use this terminal and activated environment for dependency installation and application commands.
+
+## Install dependencies and create `.env`
+
+Run these commands from the repository root with the `mini-rag` Conda environment activated. Repeat the activation step whenever you open a new terminal.
+
+### Windows
+
+In **Anaconda Prompt (Miniconda)**:
+
+```bat
+cd /d C:\myFiles\github\mini-rag
+conda activate mini-rag
+python -m pip install -r requirements.txt
+copy .env.example .env
+```
+
+### Linux (including Ubuntu in WSL)
+
+In your Linux terminal:
+
+```bash
+conda activate mini-rag
+python -m pip install -r requirements.txt
+cp .env.example .env
+```
+
+If you are using WSL, first change to the project directory with `cd /mnt/c/myFiles/github/mini-rag`.
+
+The `.env` file contains the local `APP_NAME` and `APP_VERSION` settings. Edit it if needed; it is ignored by Git. The committed `.env.example` provides the defaults for creating your local file.
 
 When finished, leave the environment with:
 
