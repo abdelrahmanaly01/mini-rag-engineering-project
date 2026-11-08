@@ -1,0 +1,534 @@
+# =============================================================================
+# Universal .gitignore
+# Trim sections you don't need; keep the secrets and OS sections always.
+# Lockfiles (package-lock.json, yarn.lock, poetry.lock, Cargo.lock for apps,
+# etc.) are intentionally NOT ignored: commit them.
+# =============================================================================
+
+
+# -----------------------------------------------------------------------------
+# Secrets & credentials (never commit these)
+# -----------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+!.env.sample
+!.env.template
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.crt
+*.cer
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+secrets.*
+*.secret
+*.secrets
+credentials.json
+service-account*.json
+.aws/
+.npmrc
+.pypirc
+.netrc
+.htpasswd
+terraform.tfvars
+*.auto.tfvars
+
+
+# -----------------------------------------------------------------------------
+# Operating system files
+# -----------------------------------------------------------------------------
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+.DocumentRevisions-V100
+.TemporaryItems
+Icon?
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.stackdump
+
+# Linux
+*~
+.directory
+.fuse_hidden*
+.Trash-*
+.nfs*
+
+
+# -----------------------------------------------------------------------------
+# Editors & IDEs
+# -----------------------------------------------------------------------------
+# VS Code (share selected team settings)
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+*.code-workspace
+.history/
+
+# JetBrains (IntelliJ, PyCharm, WebStorm, etc.)
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+cmake-build-*/
+
+# Vim / Neovim
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+Session.vim
+.netrwhist
+tags
+!tags/
+
+# Emacs
+\#*\#
+.\#*
+*.elc
+auto-save-list
+.projectile
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Eclipse
+.classpath
+.project
+.settings/
+.metadata/
+bin/
+tmp/
+
+# Xcode
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.moved-aside
+DerivedData/
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+
+# -----------------------------------------------------------------------------
+# Logs, temp files & runtime data
+# -----------------------------------------------------------------------------
+*.log
+logs/
+log/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.orig
+*.rej
+*.pid
+*.pid.lock
+*.seed
+.cache/
+tmp/
+temp/
+
+
+# -----------------------------------------------------------------------------
+# Node.js / JavaScript / TypeScript
+# -----------------------------------------------------------------------------
+node_modules/
+jspm_packages/
+bower_components/
+.npm
+.pnpm-store/
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
+*.tsbuildinfo
+.eslintcache
+.stylelintcache
+.parcel-cache/
+.rpt2_cache/
+.rts2_cache_*/
+.node_repl_history
+*.tgz
+
+# Framework build output
+dist/
+build/
+.next/
+.nuxt/
+.output/
+.svelte-kit/
+.angular/
+.astro/
+.expo/
+.docusaurus/
+.vercel/
+.netlify/
+.turbo/
+.vite/
+.serverless/
+storybook-static/
+coverage/
+.nyc_output/
+*.lcov
+
+
+# -----------------------------------------------------------------------------
+# Python
+# -----------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+.eggs/
+develop-eggs/
+downloads/
+eggs/
+parts/
+sdist/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+MANIFEST
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# Tooling caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pytype/
+.pyre/
+.dmypy.json
+dmypy.json
+.tox/
+.nox/
+.hypothesis/
+.coverage
+.coverage.*
+htmlcov/
+cover/
+nosetests.xml
+coverage.xml
+*.cover
+.ipynb_checkpoints/
+profile_default/
+ipython_config.py
+.pdm-python
+.pdm-build/
+__pypackages__/
+celerybeat-schedule
+celerybeat.pid
+instance/
+.webassets-cache
+.scrapy
+docs/_build/
+site/
+
+
+# -----------------------------------------------------------------------------
+# Java / Kotlin / Scala / Android
+# -----------------------------------------------------------------------------
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+replay_pid*
+target/
+.gradle/
+!gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+.mvn/timing.properties
+!.mvn/wrapper/maven-wrapper.jar
+local.properties
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.ap_
+*.dex
+.bsp/
+.metals/
+.bloop/
+
+
+# -----------------------------------------------------------------------------
+# C / C++
+# -----------------------------------------------------------------------------
+*.o
+*.obj
+*.a
+*.lib
+*.la
+*.lo
+*.dll
+*.dylib
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+*.pch
+*.gch
+*.d
+*.slo
+*.lai
+*.ilk
+*.pdb
+*.exp
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+compile_commands.json
+Makefile.in
+.ccls-cache/
+
+
+# -----------------------------------------------------------------------------
+# C# / .NET
+# -----------------------------------------------------------------------------
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Ll]og/
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+TestResults/
+*.trx
+*.rsuser
+*.pidb
+project.lock.json
+launchSettings.json
+
+
+# -----------------------------------------------------------------------------
+# Go
+# -----------------------------------------------------------------------------
+*.test
+*.prof
+go.work
+go.work.sum
+vendor/
+
+
+# -----------------------------------------------------------------------------
+# Rust
+# -----------------------------------------------------------------------------
+# For libraries, also ignore Cargo.lock; for apps/binaries, commit it.
+debug/
+**/*.rs.bk
+*.pdb
+
+
+# -----------------------------------------------------------------------------
+# Ruby / Rails
+# -----------------------------------------------------------------------------
+*.gem
+*.rbc
+.bundle/
+.byebug_history
+.rspec_status
+/vendor/bundle
+/public/assets
+/public/packs
+/public/packs-test
+/storage/*
+!/storage/.keep
+/tmp/*
+!/tmp/.keep
+config/master.key
+config/credentials/*.key
+
+
+# -----------------------------------------------------------------------------
+# PHP / Laravel / Composer
+# -----------------------------------------------------------------------------
+/vendor/
+composer.phar
+.phpunit.result.cache
+.phpunit.cache/
+/storage/*.key
+/public/hot
+/public/storage
+.phpstan.cache
+
+
+# -----------------------------------------------------------------------------
+# Swift / iOS / Dart / Flutter
+# -----------------------------------------------------------------------------
+.build/
+.swiftpm/
+Pods/
+*.ipa
+*.dSYM.zip
+*.dSYM
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+pubspec.lock.bak
+
+
+# -----------------------------------------------------------------------------
+# Infrastructure: Docker, Terraform, Kubernetes, Vagrant
+# -----------------------------------------------------------------------------
+.terraform/
+.terraform.lock.hcl.bak
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+.terragrunt-cache/
+.vagrant/
+docker-compose.override.yml
+.docker/
+*.kubeconfig
+kubeconfig
+
+
+# -----------------------------------------------------------------------------
+# Databases & local data
+# -----------------------------------------------------------------------------
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+*.sql.gz
+dump.rdb
+*.mdb
+*.ldb
+
+
+# -----------------------------------------------------------------------------
+# Data science / ML
+# -----------------------------------------------------------------------------
+*.h5
+*.hdf5
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.pkl
+*.pickle
+*.joblib
+*.npy
+*.npz
+mlruns/
+wandb/
+lightning_logs/
+.dvc/cache
+.dvc/tmp
+
+
+# -----------------------------------------------------------------------------
+# Archives, packages & large binaries
+# -----------------------------------------------------------------------------
+*.7z
+*.dmg
+*.gz
+*.iso
+*.rar
+*.tar
+*.zip
+*.bz2
+*.xz
+*.deb
+*.rpm
+*.msi
+# Un-ignore if you really do track a specific archive:
+# !assets/important.zip
+
+
+# -----------------------------------------------------------------------------
+# Documents & scratch files
+# -----------------------------------------------------------------------------
+~$*
+.~lock.*#
+*.autosave
+scratch/
+playground/
+sandbox/
+notes.local.*
+TODO.local*
+
+
+# -----------------------------------------------------------------------------
+# Misc tooling
+# -----------------------------------------------------------------------------
+.sass-cache/
+*.css.map
+*.js.map
+.firebase/
+.supabase/
+.wrangler/
+.dev.vars
+.direnv/
+.envrc.local
+.terraform-docs-cache/
+.husky/_/
+.claude/settings.local.json
