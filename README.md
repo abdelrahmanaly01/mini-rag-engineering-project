@@ -148,6 +148,14 @@ When finished, leave the environment with:
 conda deactivate
 ```
 
+## Start Fest API server
+
+From the repository root with the `mini-rag` environment activated, run:
+
+```bash
+uvicorn main:app --reload --host 0.0.0.0
+```
+
 ## Setup references
 
 - [Miniconda installation guide](https://www.anaconda.com/docs/getting-started/installation)
