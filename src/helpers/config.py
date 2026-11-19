@@ -2,9 +2,12 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    OPENAI_API_KEY: str = ""
-    APP_NAME: str = "mini-rag"
-    APP_VERSION: str = "0.1.0"
+
+    APP_NAME: str 
+    APP_VERSION: str
+    
+    ALLOWED_FILE_TYPES: list[str] 
+    MAX_FILE_SIZE: int 
 
     model_config = SettingsConfigDict(
         env_file=".env",
@@ -12,5 +15,5 @@ class Settings(BaseSettings):
     )
 
 
-def get_settings() -> Settings:
+def get_settings()-> Settings:
     return Settings()
