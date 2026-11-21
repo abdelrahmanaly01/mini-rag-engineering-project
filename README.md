@@ -124,8 +124,8 @@ In **Anaconda Prompt (Miniconda)**:
 ```bat
 cd /d C:\myFiles\github\mini-rag
 conda activate mini-rag
-python -m pip install -r requirements.txt
-copy .env.example .env
+python -m pip install -r src\requirements.txt
+copy src\.env.example src\.env
 ```
 
 ### Linux (including Ubuntu in WSL)
@@ -134,8 +134,8 @@ In your Linux terminal:
 
 ```bash
 conda activate mini-rag
-python -m pip install -r requirements.txt
-cp .env.example .env
+python -m pip install -r src/requirements.txt
+cp src/.env.example src/.env
 ```
 
 If you are using WSL, first change to the project directory with `cd /mnt/c/myFiles/github/mini-rag`.
@@ -148,11 +148,12 @@ When finished, leave the environment with:
 conda deactivate
 ```
 
-## Start Fest API server
+## Start the API server
 
-From the repository root with the `mini-rag` environment activated, run:
+With the `mini-rag` environment activated, change to the `src` directory and start the server:
 
 ```bash
+cd src
 uvicorn main:app --reload --host 0.0.0.0
 ```
 

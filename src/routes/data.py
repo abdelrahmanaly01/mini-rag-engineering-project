@@ -1,5 +1,5 @@
-from fastapi import APIRouter, File, UploadFile
-
+from fastapi import APIRouter, File, UploadFile, status
+from fastapi.responses import JSONResponse
 from controllers.data_controller import DataController
 
 
@@ -15,4 +15,9 @@ async def upload_file(
     file: UploadFile = File(...),
 ):
     data_controller = DataController()
-    return data_controller.validate_file(file)
+    result = data_controller.validate_file(file)
+    return JSONResponse(
+        content=result,
+        status_code=status.HTTP_200_OK if result["valid"] else status.HTTP_400_BAD_REQUEST,
+        media_type="application/json",
+    )

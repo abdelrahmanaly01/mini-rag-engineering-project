@@ -1,7 +1,7 @@
 from fastapi import UploadFile
 
 from controllers.base_controller import BaseController
-from models.enums.responseEnums import FileUploadResponse
+from models import FileUploadResponse
 
 
 class DataController(BaseController):
