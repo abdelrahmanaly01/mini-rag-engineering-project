@@ -1,6 +1,7 @@
 from fastapi import UploadFile
 
 from controllers.base_controller import BaseController
+from models.enums.responseEnums import FileUploadResponse
 
 
 class DataController(BaseController):
@@ -10,9 +11,18 @@ class DataController(BaseController):
             allowed_type.lower() for allowed_type in self.settings.ALLOWED_FILE_TYPES
         }
         if file_type not in allowed_types:
-            return {"valid": False, "message": "File type is not supported."}
+            return {
+                "valid": False,
+                "message": FileUploadResponse.FILE_TYPE_NOT_SUPPORTED.value,
+            }
 
         if file.size is not None and file.size > self.settings.MAX_FILE_SIZE*1024*1024:
-            return {"valid": False, "message": "File exceeds the maximum allowed size."}
+            return {
+                "valid": False,
+                "message": FileUploadResponse.FILE_EXCEEDS_MAX_SIZE.value,
+            }
 
-        return {"valid": True, "message": "File is supported."}
+        return {
+            "valid": True,
+            "message": FileUploadResponse.FILE_SUPPORTED.value,
+        }
