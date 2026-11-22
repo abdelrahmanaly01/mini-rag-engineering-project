@@ -28,7 +28,7 @@ async def upload_file(
             while chunk_content := await file.read(settings.MAX_CHUNK_SIZE):
                 await out_file.write(chunk_content)
         return JSONResponse(
-            content={"message": FileUploadResponse.FILE_UPLOAD_SUCCESS},
+            content={"message": FileUploadResponse.FILE_UPLOAD_SUCCESS.value},
             media_type="application/json",
         )
     else:
