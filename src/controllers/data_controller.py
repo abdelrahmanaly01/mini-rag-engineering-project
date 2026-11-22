@@ -1,5 +1,4 @@
 from fastapi import UploadFile
-
 from controllers.base_controller import BaseController
 from models import FileUploadResponse
 

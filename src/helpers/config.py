@@ -8,7 +8,8 @@ class Settings(BaseSettings):
     
     ALLOWED_FILE_TYPES: list[str] 
     MAX_FILE_SIZE: int 
-
+    MAX_CHUNK_SIZE: int
+    
     model_config = SettingsConfigDict(
         env_file=".env",
         env_file_encoding="utf-8",
